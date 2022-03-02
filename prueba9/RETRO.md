@@ -1,4 +1,4 @@
-- SPRINT 5*
+- SPRINT 6*
 ## 1. Comenzar a hacer:
 Preguntar si estamos trabados en algo<br> 
 *#Tener iniciativa*<br> 
@@ -14,4 +14,5 @@ Ser empatic@ con los tiempos de los demás<br>
 *No avisar que no estaremos en clase*<br>
 
 ## 5. Dejar de hacer:
+*Estar muy atrasad@ con el playground*<br> 
 *Esperar a que otro me diga que hacer*<br> 
