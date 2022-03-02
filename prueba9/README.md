@@ -31,11 +31,11 @@ De esta página nos gustó la gama de colores y tipografía.
 ### Nuestro trello (https://trello.com/b/I0MJ9ohT/grupo-indefined) <br>
 
 ## Usuarios Json
-- email: alexandernarcisolamas@gmail.com contraseña: adminDH
-- email: gabrielgomez@gmail.com contraseña: adminDH
-- email: camilaledezma@gmail.com contraseña: adminDH
-- email: marielacalcina@gmail.com contraseña: adminDH
+- email: alexandernarcisolamas@indefined.com contraseña: adminDH
+- email: gabrielgomez@indefined.com contraseña: adminDH
+- email: camilaledezma@indefined.com contraseña: adminDH
+- email: marielacalcina@indefined.com contraseña: adminDH
 - email: chimuelo@gmail.com contraseña: chimuelo12
-- email: chiruza@gmail.com contraseña: chiruza12
+- email: chiruza@gmail.com contraseña: chiruza123
 
 
