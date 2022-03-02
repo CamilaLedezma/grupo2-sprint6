@@ -1,0 +1,120 @@
+<html>
+<%- include ("../partials/head") %> 
+<body>
+
+<%- include("../partials/header") %> 
+<main class="product-create">
+    <section class="titulos"><h2>Crear producto</h2></section>
+    
+    <section class="forms">
+        <form action="/products/create" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="name" >Nombre:<input type="text" name="name" required></label>
+        </div>
+        <div class="product-desc"> 
+            <label for="description">Descripción:</label>
+            <textarea minlength="4" name="description" required></textarea>
+        </div>  
+        <div>
+            <label for="categories_id">Categoría:</label>
+            <select name="categories_id" id="prod-category">
+                <option value="" disabled selected> seleccione una opcion</option>
+                <% allCategories.forEach(category => { %>
+                <option value="<%= category.id %>"
+                    <% if (locals.oldData && oldData.category_id == category.id) { %>
+                            selected="selected" 
+                    <% } %>>
+                    <%= category.name %>
+                </option>
+                <% }); %>
+            </select>
+        </div>
+        <div>
+            <label for="size_id">Talle: </label>
+            <select name="sizes_id" id="prod-size">
+                <option value="" disabled selected> seleccione una opcion</option>
+                <% allSizes.forEach(size => { %>
+                <option value="<%= size.id %>"
+                    <% if (locals.oldData && oldData.size_id == size.id) { %>
+                            selected="selected" 
+                    <% } %>>
+                    <%= size.name %>
+                </option>
+                <% }); %>
+            </select>
+        </div>
+        <div>
+            <label for="quantity">stock: </label>
+            <input type="number" name="stock" required>
+        </div>
+        <div>
+            <label for="quantity">stock mínimo: </label>
+            <input type="number" name="stock_min" required>
+        </div>
+        <div>
+            <label for="stock_max">stock máximo: </label>
+            <input type="number" name="stock_max" required>
+        </div>
+        <div>
+            <label for="colors_id">Color: </label>
+            <select name="colors_id" id="prod-colour">
+                <option value="" disabled selected> seleccione una opcion</option>
+                <% allColors.forEach(color => { %>
+                <option value="<%= color.id %>"
+                    <% if (locals.oldData && oldData.color_id == color.id) { %>
+                            selected="selected" 
+                    <% } %>>
+                    <%= color.name %>
+                </option>
+                <% }); %>
+            </select>
+        </div>
+        <div>
+            <label for="price">Precio: </label>
+            <input type="number" name="price" required>
+        </div>
+        <div>
+            <label for="discounts_id">Descuento: </label>
+            <select name="discounts_id" id="prod-discount">
+                <option value="" disabled selected> seleccione una opcion</option>
+                <% allDiscounts.forEach(disc => { %>
+                <option value="<%= disc.id %>"
+                    <% if (locals.oldData && oldData.disc_id == disc.id) { %>
+                            selected="selected" 
+                    <% } %>>
+                    <%= disc.name %>
+                </option>
+                <% }); %>
+            </select>
+        </div>
+        <div>
+            <label for="visibility">Visible: </label>
+            <select name="visibility" id="prod-visibility">
+                <option value="" disabled selected> seleccione una opcion</option>
+                <option value="1" id="si" >SI</option>
+                <option value="1" id="si" >NO</option>
+            </select>
+            
+        </div>
+        <div>
+            <label for="recommended">Destacar en inicio: </label>
+            <select name="recommended" id="prod-recommended">
+                <option value="" disabled selected> seleccione una opcion</option>
+                <option value="1" id="si" >SI</option>
+                <option value="1" id="si" >NO</option>
+            </select>
+            
+        </div>
+        
+        <div>
+            <label for="image">Imagen:</label>
+            <input type="file" name="image" accept=".jpg ,.jpeg,.png" required>
+        </div>
+        <div class="submit">
+            <button type="submit">Crear producto</button>
+        </form>
+    </section>
+</main>
+<%- include("../partials/footer") %> 
+</body>
+</html>
