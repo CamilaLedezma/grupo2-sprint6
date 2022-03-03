@@ -144,17 +144,18 @@ const productController = {
     },
 
     delete:(req, res)=>{
-        let eliminado= Product.destroy({
-            where: {id:req.params.id}
-        })
         let image= Image.destroy({
             where: {products_id:req.params.id}
+        }).then(
+            eliminaded=>{
+                let eliminado= Product.destroy({
+            where: {id:req.params.id}
+                })
+            }
+        ).then(hechos=>{
+            res.redirect('/productsAdmin')
         })
-        Promise
-            .all([eliminado,image])
-            .then(([prod,img])=>{
-                res.redirect('/productsAdmin')
-        })
+    
     },
     /*
     category:(req,res)=>{
