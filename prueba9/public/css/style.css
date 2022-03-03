@@ -189,7 +189,12 @@ header #menu .burger-menu{
     padding: 5px;
     width: 150px;
 }
-
+.yoda, .error-404{
+    margin:0px auto;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+}
 
 /* ========================= MAIN INDEX ========================= */
 
