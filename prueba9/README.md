@@ -30,7 +30,7 @@ De esta página nos gustó la gama de colores y tipografía.
 
 ### Nuestro trello (https://trello.com/b/I0MJ9ohT/grupo-indefined) <br>
 
-## Usuarios Json
+## Usuarios 
 - email: alexandernarcisolamas@indefined.com contraseña: adminDH
 - email: gabrielgomez@indefined.com contraseña: adminDH
 - email: camilaledezma@indefined.com contraseña: adminDH
