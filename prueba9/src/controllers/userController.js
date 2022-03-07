@@ -94,36 +94,52 @@ const userController = {
         
     },
     processEditProfile: async(req, res)=>{
-        let id=req.params.id
-        console.log('el usuario a editar es: '+id)
+        let idP=req.params.id
+        console.log('el usuario a editar es: '+idP)
         console.log(req.body)
         let passwordForm;
         let file;
+        let cambio;
+        console.log(req.file)
+
         if(req.file!=undefined){
-            file=req.file.filename
-        }else{file=req.body.oldAvatar}
+            
+            file=req.file.filename 
+            cambio=1 
+            }else{
+            file=req.body.oldAvatar
+            cambio=0
+        }
         if(req.body.password==''){
             passwordForm=req.body.oldpassword;
-        }else{passwordForm= bcryptjs.hashSync(req.body.password, 10)}
+            }else{
+            passwordForm= bcryptjs.hashSync(req.body.password, 10)}
         //console.log(passwordForm)
         //console.log(file)
+        try{
+            let userToEdit= await User.update({
+                name:req.body.name,
+                email:req.body.email,
+                date:null,
+                password:passwordForm
+            },
+            {
+                where:{id:idP}
+            }).then(editado=>{
+                Avatar.update({
+                    url_name:file
+                },{where:{users_id:idP}})
+            })
+            .then(hechos=>{
+                console.log(hechos)
+                res.redirect('/logout')
+            })
+
+
+        }catch(error){console.log(error)}
         
-        const userToEdit =User.update({
-			name:req.body.name,
-            email:req.body.email,
-            date:req.body.date,
-            password:passwordForm
-        },
-        {
-            where:{id:id}
-        })
-        const avatarToEdit = await Avatar.update({
-            url_name:file
-        },{
-            where:{users_id:id}
-        }).then(hechos=>{
-            res.redirect('/profile/'+id)
-        })
+        
+
 
     },
     register : (req, res)=>{

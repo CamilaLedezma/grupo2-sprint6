@@ -138,9 +138,8 @@ const productController = {
         {
             where:{id:id}
         })
-        
-        //console.log(productToEdit.name + 'fue editado')
-        res.redirect('/productsAdmin')
+        .then(producteditado=>{
+            res.redirect('/productsAdmin')})
     },
 
     delete:(req, res)=>{
